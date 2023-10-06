@@ -4,7 +4,7 @@ export const productsRouter = Router();
 productsRouter.get('/', productController.getAll);
 productsRouter.post('/', productController.create);
 
-// to do
+// not required
 
 productsRouter.get('/:id', productController.getById);
 productsRouter.delete('/:id', productController.delete);
