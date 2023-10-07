@@ -1,7 +1,9 @@
 import { ProductModel } from '../Models/Product.js';
 export class productController {
   static async getAll(req, res) {
-    const products = await ProductModel.getAll();
+    const { tag } = req.query;
+    const { sort } = req.query;
+    const products = await ProductModel.getAll({ tag, sort });
     res.json(products);
   }
 

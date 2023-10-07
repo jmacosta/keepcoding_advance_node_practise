@@ -6,7 +6,14 @@ const productsWithId = products.map(product => {
 });
 export class ProductModel {
   // to do bd statics methods
-  static async getAll() {
+  static async getAll({ tag }) {
+    if (tag) {
+      return productsWithId.filter(product =>
+        product.tags.some(
+          element => element.toLowerCase() === tag.toLowerCase()
+        )
+      );
+    }
     return productsWithId;
   }
   static async getTags() {}
