@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx nodemon app.js",
-    "initdb": "node init-db.js"
+    "initdb": "node db/initdb.js"
   },
   "keywords": [],
   "author": "",

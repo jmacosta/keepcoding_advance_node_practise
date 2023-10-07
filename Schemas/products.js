@@ -1,9 +1,10 @@
-import mongose from 'mongoose';
-import { v4 as uuidv4 } from 'mongoose-uuid';
+import mongoose from 'mongoose';
+import mongooseUUID from 'mongoose-uuid';
+const { v4: uuidv4 } = mongooseUUID;
 
-export const productSchema = mongose.Schema(
+const productSchema = mongoose.Schema(
   {
-    id: { type: String, unique: true, default: uuidv4 },
+    //id: { type: String, unique: true, default: uuidv4 },
     name: { type: String, index: true },
     sellOrSearch: { type: String, index: true },
     price: { type: String },
@@ -12,5 +13,8 @@ export const productSchema = mongose.Schema(
   },
   { collection: 'products' }
 );
+
+const ProductModel = mongoose.model('Product', productSchema);
+export default ProductModel;
 
 // to do validate functions
