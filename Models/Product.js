@@ -1,17 +1,12 @@
 import ProductModel from '../Schemas/products.js';
 export class Product {
   // to do bd statics methods
-  static async getAll({ tag, sort }) {
-    if (tag) {
-      return productsWithId.filter(product =>
-        product.tags.some(
-          element => element.toLowerCase() === tag.toLowerCase()
-        )
-      );
-    }
-    if (sort) {
-    }
-    return productsWithId;
+  static async getAll({ filter, skip, limit, sort }) {
+    const query = ProductModel.find(filter);
+    query.skip(skip);
+    query.sort(sort);
+    query.limit(limit);
+    return query.exec();
   }
   static async getTags() {}
   static async create() {}

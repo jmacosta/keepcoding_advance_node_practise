@@ -1,13 +1,14 @@
 import mongoose from 'mongoose';
 import mongooseUUID from 'mongoose-uuid';
+import { boolean, number } from 'zod';
 const { v4: uuidv4 } = mongooseUUID;
 
 const productSchema = mongoose.Schema(
   {
     //id: { type: String, unique: true, default: uuidv4 },
     name: { type: String, index: true },
-    sellOrSearch: { type: String, index: true },
-    price: { type: String },
+    sellOrSearch: { type: Boolean },
+    price: { type: Number },
     image: { type: String },
     tags: [{ type: String }]
   },
