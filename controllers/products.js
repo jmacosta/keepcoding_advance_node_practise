@@ -4,6 +4,10 @@ export class productController {
     const filterByName = req.query.name;
     const filterByTag = req.query.tags;
     const filterBySellOrSearch = req.query.sellOrSearch;
+    const limit = req.query.limit;
+    const sort = req.query.sort;
+    const skip = req.query.start;
+
     const filter = {};
     if (filterByName) {
       filter.name = filterByName;
@@ -14,12 +18,14 @@ export class productController {
     if (filterBySellOrSearch) {
       filter.sellOrSearch = filterBySellOrSearch;
     }
-    const products = await Product.getAll({ filter });
+    const products = await Product.getAll({ filter, sort, limit, skip });
     res.json(products);
   }
 
   static async create(req, res) {}
-  static async getTags(req, res) {}
+  static async getTags(req, res) {
+    return res.json(await Product.getTags());
+  }
   static async delete(req, res) {}
   static async patch(req, res) {}
   static async getById(req, res) {
