@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Productos <%= title%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Listado de productos de Nodepop</h1>
+    </header>
+    <main>
+      <%products.forEach(function(product){%>
+      <div class="card">
+        <div class="title"><h2><%= product.name %></h2></div>
+        <div class="content">
+          <img src="/assets/<%= product.image %>" alt="<%= product.image %>" />
+          <div class="description">
+            <ul>
+              <li>
+                <% if (product.sellOrSearch){ %>
+                <h3 class="sell">SE VENDE</h3>
+                <% }else{%>
+                <h3 class="search">SE BUSCA</h3>
+                <% } %>
+              </li>
+              <li class="price">Precio <%= ` ${product.price} ` %> €</li>
+              <li>
+                <ul>
+                  <%product.tags.forEach(function(tag){%>
+                  <li class="tag"><%= tag %></li>
+                  <%})%>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <%})%>
+    </main>
+    <footer>
+      <p>&copy; 2023 Keppcoding Nodepop</p>
+    </footer>
+  </body>
+</html>

@@ -18,8 +18,12 @@ export class productController {
     if (filterBySellOrSearch) {
       filter.sellOrSearch = filterBySellOrSearch;
     }
+    res.locals.title = 'Nodepop';
+
     const products = await Product.getAll({ filter, sort, limit, skip });
-    res.json(products);
+    res.locals.products = products;
+    //res.json(products);
+    res.render('index');
   }
 
   static async create(req, res) {
