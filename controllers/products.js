@@ -10,7 +10,7 @@ export class productController {
 
     const filter = {};
     if (filterByName) {
-      filter.name = filterByName;
+      filter.name = new RegExp('^' + req.query.name, 'i');
     }
     if (filterByTag) {
       filter.tags = { $in: filterByTag };
