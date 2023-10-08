@@ -90,176 +90,423 @@ From the folder of the server:
 
 http://localhost:3000/products/?name=s
 
+```json
+[
+  {
+    "_id": "65230c42edaaa0cf928dc550",
+    "name": "Sartén Antiadherente de Chef",
+    "sellOrSearch": true,
+    "price": 29.99,
+    "image": "sartenantiadherente.jpg",
+    "tags": [
+      "lifestyle"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc53c",
+    "name": "Scooter Eléctrico Plegable",
+    "sellOrSearch": true,
+    "price": 399.99,
+    "image": "scooterplegable.jpg",
+    "tags": [
+      "lifestyle",
+      "mobile"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc558",
+    "name": "Set de Herramientas para Barbacoa",
+    "sellOrSearch": true,
+    "price": 29.99,
+    "image": "herramientasbarbacoa.jpg",
+    "tags": [
+      "lifestyle"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc575",
+    "name": "Silla de Camping Plegable y Portátil",
+    "sellOrSearch": true,
+    "price": 19.99,
+    "image": "sillacamping.jpg",
+    "tags": [
+      "lifestyle"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc54b",
+    "name": "Silla de Oficina Ergonómica",
+    "sellOrSearch": true,
+    "price": 149.99,
+    "image": "sillaoficina.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc579",
+    "name": "Sistema de Altavoces para Home Cinema",
+    "sellOrSearch": true,
+    "price": 399.99,
+    "image": "altavoceshomecinema.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  }
+]
 
+```
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Productos Nodepop</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Listado de productos de Nodepop</h1>
-    </header>
-    <main>
+http://localhost:3000/products/?tags=work
+```json
 
-      <div class="card">
-        <div class="title"><h2>Sartén Antiadherente de Chef</h2></div>
-        <div class="content">
-          <img src="/assets/sartenantiadherente.jpg"
-            alt="sartenantiadherente.jpg" />
-          <div class="description">
-            <ul>
-              <li>
+[
+  {
+    "_id": "65230c42edaaa0cf928dc535",
+    "name": "Motor de Automóvil de Alto Rendimiento",
+    "sellOrSearch": true,
+    "price": 4999.99,
+    "image": "motoralto.jpg",
+    "tags": [
+      "motor",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc538",
+    "name": "Portátil para Trabajo y Productividad",
+    "sellOrSearch": true,
+    "price": 899.99,
+    "image": "portatilproductividad.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc53a",
+    "name": "Herramientas de Jardín de Alta Calidad",
+    "sellOrSearch": true,
+    "price": 349.99,
+    "image": "herramientasjardin.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc53d",
+    "name": "Laptop para Diseño Gráfico",
+    "sellOrSearch": false,
+    "price": 1299.99,
+    "image": "laptopdisenio.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc53f",
+    "name": "Herramientas de Carpintería Profesional",
+    "sellOrSearch": true,
+    "price": 499.99,
+    "image": "herramientascarpinteria.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc540",
+    "name": "Tableta Digitalizadora para Artistas",
+    "sellOrSearch": false,
+    "price": 249.99,
+    "image": "tabletaartista.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc544",
+    "name": "Impresora 3D de Alta Precisión",
+    "sellOrSearch": true,
+    "price": 499.99,
+    "image": "impresora3d.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc547",
+    "name": "Herramientas de Electricista Profesional",
+    "sellOrSearch": true,
+    "price": 399.99,
+    "image": "herramientaselectricista.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc549",
+    "name": "Mesa de Escritorio Ergonómica",
+    "sellOrSearch": false,
+    "price": 129.99,
+    "image": "mesaescritorio.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc54a",
+    "name": "Máquina de Coser para Proyectos Creativos",
+    "sellOrSearch": true,
+    "price": 199.99,
+    "image": "maquinacoser.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc54b",
+    "name": "Silla de Oficina Ergonómica",
+    "sellOrSearch": true,
+    "price": 149.99,
+    "image": "sillaoficina.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc54d",
+    "name": "Disco Duro Externo de Gran Capacidad",
+    "sellOrSearch": true,
+    "price": 89.99,
+    "image": "discoduroexterno.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc54e",
+    "name": "Maletín para Portátil de Estilo Profesional",
+    "sellOrSearch": true,
+    "price": 39.99,
+    "image": "maletinportatil.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc553",
+    "name": "Micrófono USB para Grabaciones",
+    "sellOrSearch": true,
+    "price": 49.99,
+    "image": "microfonousb.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc556",
+    "name": "Robot Aspirador Inteligente",
+    "sellOrSearch": false,
+    "price": 199.99,
+    "image": "robotaspirador.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc557",
+    "name": "Monitor de Juegos de Alta Frecuencia",
+    "sellOrSearch": true,
+    "price": 399.99,
+    "image": "monitorjuegos.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc560",
+    "name": "Candado Inteligente con Huella Dactilar",
+    "sellOrSearch": true,
+    "price": 39.99,
+    "image": "candadointeligente.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc561",
+    "name": "Herramientas de Fontanería Profesional",
+    "sellOrSearch": true,
+    "price": 499.99,
+    "image": "herramientasfontaneria.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc562",
+    "name": "Auriculares con Cancelación de Ruido",
+    "sellOrSearch": true,
+    "price": 149.99,
+    "image": "auricularescancelacionruido.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc565",
+    "name": "Caja de Herramientas con Ruedas",
+    "sellOrSearch": false,
+    "price": 89.99,
+    "image": "cajaherramientas.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc566",
+    "name": "Aspiradora Robot con Programación",
+    "sellOrSearch": false,
+    "price": 249.99,
+    "image": "aspiradorarobot.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc56a",
+    "name": "Cámara de Seguridad para Exteriores",
+    "sellOrSearch": false,
+    "price": 79.99,
+    "image": "camaraexterior.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc572",
+    "name": "Herramientas de Electricista Profesional",
+    "sellOrSearch": false,
+    "price": 499.99,
+    "image": "herramientaselectricista.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc574",
+    "name": "Lámpara LED de Escritorio con Brazo Ajustable",
+    "sellOrSearch": true,
+    "price": 29.99,
+    "image": "lamparaescritorio.jpg",
+    "tags": [
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc578",
+    "name": "Kit de Pintura al Óleo para Artistas",
+    "sellOrSearch": true,
+    "price": 39.99,
+    "image": "kitpinturaoil.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc579",
+    "name": "Sistema de Altavoces para Home Cinema",
+    "sellOrSearch": true,
+    "price": 399.99,
+    "image": "altavoceshomecinema.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  }
+]
 
-                <h3 class="sell">SE VENDE</h3>
+```
 
-              </li>
-              <li class="price">Precio 29.99 €</li>
-              <li>
-                <ul>
+http://localhost:3000/products/?start=1&limit=3&sort=name&tag=lifestyle
 
-                  <li class="tag">lifestyle</li>
+```json
+[
+  {
+    "_id": "65230c42edaaa0cf928dc548",
+    "name": "Altavoces Bluetooth Portátiles",
+    "sellOrSearch": false,
+    "price": 49.99,
+    "image": "altavocesbluetooth.jpg",
+    "tags": [
+      "lifestyle",
+      "mobile"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc570",
+    "name": "Altavoz Inteligente con Asistente de Voz",
+    "sellOrSearch": false,
+    "price": 79.99,
+    "image": "altavozinteligente.jpg",
+    "tags": [
+      "lifestyle",
+      "mobile"
+    ],
+    "__v": 0
+  },
+  {
+    "_id": "65230c42edaaa0cf928dc566",
+    "name": "Aspiradora Robot con Programación",
+    "sellOrSearch": false,
+    "price": 249.99,
+    "image": "aspiradorarobot.jpg",
+    "tags": [
+      "lifestyle",
+      "work"
+    ],
+    "__v": 0
+  }
+]
 
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="title"><h2>Scooter Eléctrico Plegable</h2></div>
-        <div class="content">
-          <img src="/assets/scooterplegable.jpg" alt="scooterplegable.jpg" />
-          <div class="description">
-            <ul>
-              <li>
-
-                <h3 class="sell">SE VENDE</h3>
-
-              </li>
-              <li class="price">Precio 399.99 €</li>
-              <li>
-                <ul>
-
-                  <li class="tag">lifestyle</li>
-
-                  <li class="tag">mobile</li>
-
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="title"><h2>Set de Herramientas para Barbacoa</h2></div>
-        <div class="content">
-          <img src="/assets/herramientasbarbacoa.jpg"
-            alt="herramientasbarbacoa.jpg" />
-          <div class="description">
-            <ul>
-              <li>
-
-                <h3 class="sell">SE VENDE</h3>
-
-              </li>
-              <li class="price">Precio 29.99 €</li>
-              <li>
-                <ul>
-
-                  <li class="tag">lifestyle</li>
-
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="title"><h2>Silla de Camping Plegable y Portátil</h2></div>
-        <div class="content">
-          <img src="/assets/sillacamping.jpg" alt="sillacamping.jpg" />
-          <div class="description">
-            <ul>
-              <li>
-
-                <h3 class="sell">SE VENDE</h3>
-
-              </li>
-              <li class="price">Precio 19.99 €</li>
-              <li>
-                <ul>
-
-                  <li class="tag">lifestyle</li>
-
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="title"><h2>Silla de Oficina Ergonómica</h2></div>
-        <div class="content">
-          <img src="/assets/sillaoficina.jpg" alt="sillaoficina.jpg" />
-          <div class="description">
-            <ul>
-              <li>
-
-                <h3 class="sell">SE VENDE</h3>
-
-              </li>
-              <li class="price">Precio 149.99 €</li>
-              <li>
-                <ul>
-
-                  <li class="tag">work</li>
-
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="title"><h2>Sistema de Altavoces para Home Cinema</h2></div>
-        <div class="content">
-          <img src="/assets/altavoceshomecinema.jpg"
-            alt="altavoceshomecinema.jpg" />
-          <div class="description">
-            <ul>
-              <li>
-
-                <h3 class="sell">SE VENDE</h3>
-
-              </li>
-              <li class="price">Precio 399.99 €</li>
-              <li>
-                <ul>
-
-                  <li class="tag">lifestyle</li>
-
-                  <li class="tag">work</li>
-
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </main>
-    <footer>
-      <p>&copy; 2023 Keppcoding Nodepop</p>
-    </footer>
-  </body>
-</html>
-
-
+```
