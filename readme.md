@@ -90,7 +90,7 @@ From the folder of the server:
 
 http://localhost:3000/products/?name=s
 
-```html
+
 
 <!DOCTYPE html>
 <html>
@@ -262,4 +262,4 @@ http://localhost:3000/products/?name=s
   </body>
 </html>
 
-```
+
