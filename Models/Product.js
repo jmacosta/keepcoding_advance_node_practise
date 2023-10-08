@@ -12,7 +12,11 @@ export class Product {
     const tags = { tags: ['work', 'lifestyle', 'mobile', 'motor'] };
     return tags;
   }
-  static async create() {}
+  static async create(input) {
+    const newProduct = new ProductModel(input);
+    await newProduct.save();
+    return newProduct;
+  }
   static async deleteMany() {
     try {
       const result = await ProductModel.deleteMany();
@@ -37,8 +41,8 @@ export class Product {
   // not required
   static async update() {}
   static async delete() {}
-  static async getById({ id }) {
-    const product = productsWithId.find(product => product.id === id);
+  static async getById(id) {
+    const product = ProductModel.find({ _id: id });
     return product;
   }
 }

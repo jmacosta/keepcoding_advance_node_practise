@@ -22,15 +22,25 @@ export class productController {
     res.json(products);
   }
 
-  static async create(req, res) {}
+  static async create(req, res) {
+    const productData = req.body;
+
+    try {
+      const newProduct = await Product.create(productData);
+      return res.status(201).json(newProduct);
+    } catch (error) {
+      return res.status(400).json({ error: JSON.parse(error) });
+    }
+  }
   static async getTags(req, res) {
     return res.json(await Product.getTags());
   }
   static async delete(req, res) {}
   static async patch(req, res) {}
   static async getById(req, res) {
-    const { id } = req.params;
-    const product = await Product.getById({ id });
+    const id = req.params.id;
+    console.log(`el id es ${id}`);
+    const product = await Product.getById(id);
     if (product) return res.json(product);
     res.status(404).json({ message: 'Product not found' });
   }
