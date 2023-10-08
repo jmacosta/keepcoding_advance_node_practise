@@ -8,7 +8,10 @@ export class Product {
     query.limit(limit);
     return query.exec();
   }
-  static async getTags() {}
+  static async getTags() {
+    const tags = { tags: ['work', 'lifestyle', 'mobile', 'motor'] };
+    return tags;
+  }
   static async create() {}
   static async deleteMany() {
     try {
