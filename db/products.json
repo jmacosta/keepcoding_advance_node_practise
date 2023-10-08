@@ -51,7 +51,7 @@
     },
     {
       "name": "Mochila para Viajes de Aventura",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 69.99,
       "image": "mochilaaventura.jpg",
       "tags": ["lifestyle"]
@@ -65,7 +65,7 @@
     },
     {
       "name": "Laptop para Diseño Gráfico",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 1299.99,
       "image": "laptopdisenio.jpg",
       "tags": ["work"]
@@ -86,7 +86,7 @@
     },
     {
       "name": "Tableta Digitalizadora para Artistas",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 249.99,
       "image": "tabletaartista.jpg",
       "tags": ["work"]
@@ -142,14 +142,14 @@
     },
     {
       "name": "Altavoces Bluetooth Portátiles",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 49.99,
       "image": "altavocesbluetooth.jpg",
       "tags": ["lifestyle", "mobile"]
     },
     {
       "name": "Mesa de Escritorio Ergonómica",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 129.99,
       "image": "mesaescritorio.jpg",
       "tags": ["work"]
@@ -233,14 +233,14 @@
     },
     {
       "name": "Afeitadora Eléctrica de Precisión",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 59.99,
       "image": "afeitadora.jpg",
       "tags": ["lifestyle", "mobile"]
     },
     {
       "name": "Robot Aspirador Inteligente",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 199.99,
       "image": "robotaspirador.jpg",
       "tags": ["lifestyle", "work"]
@@ -345,105 +345,105 @@
     },
     {
       "name": "Caja de Herramientas con Ruedas",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 89.99,
       "image": "cajaherramientas.jpg",
       "tags": ["work"]
     },
     {
       "name": "Aspiradora Robot con Programación",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 249.99,
       "image": "aspiradorarobot.jpg",
       "tags": ["lifestyle", "work"]
     },
     {
       "name": "Máquina para Hacer Panini",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 34.99,
       "image": "panini.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Bolso de Viaje de Cuero",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 99.99,
       "image": "bolsocuero.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Telescopio para Observación Astronómica",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 129.99,
       "image": "telescopioastronomico.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Cámara de Seguridad para Exteriores",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 79.99,
       "image": "camaraexterior.jpg",
       "tags": ["lifestyle", "work"]
     },
     {
       "name": "Laptop Gaming de Alta Potencia",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 1499.99,
       "image": "laptopgaming.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Botas de Montaña Resistentes al Agua",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 89.99,
       "image": "botasmontana.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Herramientas para Jardinería en Miniatura",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 19.99,
       "image": "herramientasjardineria.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Máquina para Hacer Pasta Casera",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 49.99,
       "image": "pastacasera.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Cámara Compacta de Alta Resolución",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 349.99,
       "image": "camaracompactaresolucion.jpg",
       "tags": ["lifestyle", "mobile"]
     },
     {
       "name": "Altavoz Inteligente con Asistente de Voz",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 79.99,
       "image": "altavozinteligente.jpg",
       "tags": ["lifestyle", "mobile"]
     },
     {
       "name": "Máquina de Espresso Automática",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 299.99,
       "image": "maquinaespresso.jpg",
       "tags": ["lifestyle"]
     },
     {
       "name": "Herramientas de Electricista Profesional",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 499.99,
       "image": "herramientaselectricista.jpg",
       "tags": ["work"]
     },
     {
       "name": "Auriculares Inalámbricos Deportivos",
-      "sellOrSearch": true,
+      "sellOrSearch": false,
       "price": 49.99,
       "image": "auricularesdeportivos.jpg",
       "tags": ["lifestyle", "mobile"]
