@@ -19,11 +19,13 @@ export class productApiController {
       filter.sellOrSearch = filterBySellOrSearch;
     }
     res.locals.title = 'Nodepop';
-
-    const products = await Product.getAll({ filter, sort, limit, skip });
-    res.locals.products = products;
-    res.json(products);
-    //res.render('index');
+    try {
+      const products = await Product.getAll({ filter, sort, limit, skip });
+      res.locals.products = products;
+      res.json(products);
+    } catch (error) {
+      return res.status(400).json({ error: JSON.parse(error) });
+    }
   }
 
   static async create(req, res) {
@@ -44,8 +46,12 @@ export class productApiController {
   static async getById(req, res) {
     const id = req.params.id;
     console.log(`el id es ${id}`);
-    const product = await Product.getById(id);
-    if (product) return res.json(product);
-    res.status(404).json({ message: 'Product not found' });
+    try {
+      const product = await Product.getById(id);
+      if (product) return res.json(product);
+    } catch (error) {
+      console.log(error);
+      res.status(404).json({ message: 'Not found' });
+    }
   }
 }
