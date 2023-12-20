@@ -2,6 +2,7 @@ import express, { json } from 'express';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { connectDB } from './db/connectMongoose.js';
+import { productsApiRouter } from './routes/api/products_api.js';
 import { productsRouter } from './routes/products.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/products', productsRouter);
+app.use('/api/', productsApiRouter);
 
 const PORT = process.env.PORT ?? 3000;
 app.listen(PORT, () => {
