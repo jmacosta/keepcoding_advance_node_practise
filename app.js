@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
 
 app.use('/products', productsRouter);
 app.use('/api/', productsApiRouter);
+app.use((req, res, next) => {
+  res.status(404).json({ error: 'path not found' });
+});
 
 const PORT = process.env.PORT ?? 3000;
 app.listen(PORT, () => {
