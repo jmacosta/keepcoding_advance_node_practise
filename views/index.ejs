@@ -7,6 +7,7 @@
   </head>
   <body>
     <header class="text-gray-600 body-font"><%- include('header.ejs')%></header>
+      
     <main>
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
@@ -26,7 +27,7 @@
                   <h2
                     class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
                   >
-                    Precio <%= ` ${product.price} ` %> €
+                    Precio <%= product.price %> €
                   </h2>
                   <h1
                     class="title-font text-lg font-medium text-gray-900 mb-3 truncate"
@@ -77,8 +78,7 @@
         </div>
       </section>
     </main>
-    <footer>
-      <p>&copy; 2023 Keppcoding Nodepop</p>
-    </footer>
+    <%- include('footer.ejs')%>
   </body>
+
 </html>
