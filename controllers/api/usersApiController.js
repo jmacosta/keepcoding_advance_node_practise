@@ -12,7 +12,7 @@ export class UsersApiController {
   }
 
   async getByEmail(req, res) {
-    const email = req.body.id; // todo check rescue information
+    const email = req.body.id; //TODO: check rescue information
     try {
       const user = await User.getByEmail(email);
       if (user) return res.json(user);
@@ -21,7 +21,7 @@ export class UsersApiController {
       res.status(404).json({ message: 'Not found' });
     }
   }
-  // todo other methodos not required
+  // TODO: other methodos not required
   async delete(req, res) {}
   async patch(req, res) {}
 }
