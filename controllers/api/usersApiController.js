@@ -1,6 +1,6 @@
 import { User } from '../../Models/User.js';
-export class usersApiController {
-  static async register(req, res) {
+export class UsersApiController {
+  async register(req, res) {
     const userData = req.body;
 
     try {
@@ -11,7 +11,7 @@ export class usersApiController {
     }
   }
 
-  static async getByEmail(req, res) {
+  async getByEmail(req, res) {
     const email = req.body.id; // todo check rescue information
     try {
       const user = await User.getByEmail(email);
@@ -22,6 +22,6 @@ export class usersApiController {
     }
   }
   // todo other methodos not required
-  static async delete(req, res) {}
-  static async patch(req, res) {}
+  async delete(req, res) {}
+  async patch(req, res) {}
 }

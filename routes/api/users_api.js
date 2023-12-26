@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { usersApiController } from '../../controllers/api/usersApiController.js';
+import { UsersApiController } from '../../controllers/api/usersApiController.js';
+const usersApiController = new UsersApiController();
 export const usersApiRouter = Router();
 usersApiRouter.get('/', usersApiController.getByEmail); // todo check how to apply
 usersApiRouter.post('/', usersApiController.register);
