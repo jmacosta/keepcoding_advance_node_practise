@@ -9,7 +9,8 @@ const productSchema = mongoose.Schema(
     sellOrSearch: { type: Boolean, index: true },
     price: { type: Number, index: true },
     image: { type: String },
-    tags: { type: [String], index: true }
+    tags: { type: [String], index: true },
+    owner: { type: String, index: true }
   },
   { collection: 'products' }
 );

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { productApiController } from '../../controllers/api/products.js';
+import { productApiController } from '../../controllers/api/productApiController.js';
 export const productsApiRouter = Router();
 productsApiRouter.get('/', productApiController.getAll);
 productsApiRouter.post('/', productApiController.create);

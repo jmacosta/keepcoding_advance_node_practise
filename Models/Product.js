@@ -1,4 +1,4 @@
-import ProductModel from '../Schemas/products.js';
+import ProductModel from '../Schemas/productsSchema.js';
 export class Product {
   // to do bd statics methods
   static async getAll({ filter, skip, limit, sort }) {

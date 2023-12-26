@@ -1,5 +1,5 @@
 import { Product } from '../Models/Product.js';
-export class productController {
+export class productsController {
   static async getAll(req, res) {
     const filterByName = req.query.name;
     const filterByTag = req.query.tags;
