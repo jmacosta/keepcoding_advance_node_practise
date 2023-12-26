@@ -1,6 +1,6 @@
 import { Product } from '../Models/Product.js';
-export class productsController {
-  static async getAll(req, res) {
+export class ProductsController {
+  async getAll(req, res) {
     const filterByName = req.query.name;
     const filterByTag = req.query.tags;
     const filterBySellOrSearch = req.query.sellOrSearch;
@@ -26,7 +26,7 @@ export class productsController {
     res.render('index');
   }
 
-  static async create(req, res) {
+  async create(req, res) {
     const productData = req.body;
 
     try {
