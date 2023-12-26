@@ -1,6 +1,6 @@
 import { Product } from '../../Models/Product.js';
-export class productApiController {
-  static async getAll(req, res) {
+export class ProductApiController {
+  async getAll(req, res) {
     const filterByName = req.query.name;
     const filterByTag = req.query.tags;
     const filterBySellOrSearch = req.query.sellOrSearch;
@@ -28,7 +28,7 @@ export class productApiController {
     }
   }
 
-  static async create(req, res) {
+  async create(req, res) {
     const productData = req.body;
 
     try {
@@ -38,12 +38,12 @@ export class productApiController {
       return res.status(400).json({ error: JSON.parse(error) });
     }
   }
-  static async getTags(req, res) {
+  async getTags(req, res) {
     return res.json(await Product.getTags());
   }
-  static async delete(req, res) {}
-  static async patch(req, res) {}
-  static async getById(req, res) {
+  async delete(req, res) {}
+  async patch(req, res) {}
+  async getById(req, res) {
     const id = req.params.id;
     console.log(`el id es ${id}`);
     try {
