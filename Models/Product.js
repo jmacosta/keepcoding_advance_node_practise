@@ -1,23 +1,23 @@
 import ProductModel from '../Schemas/productsSchema.js';
 export class Product {
   // to do bd statics methods
-  static async getAll({ filter, skip, limit, sort }) {
+  async getAll({ filter, skip, limit, sort }) {
     const query = ProductModel.find(filter);
     query.skip(skip);
     query.sort(sort);
     query.limit(limit);
     return query.exec();
   }
-  static async getTags() {
+  async getTags() {
     const tags = { tags: ['work', 'lifestyle', 'mobile', 'motor'] };
     return tags;
   }
-  static async create(input) {
+  async create(input) {
     const newProduct = new ProductModel(input);
     await newProduct.save();
     return newProduct;
   }
-  static async deleteMany() {
+  async deleteMany() {
     try {
       const result = await ProductModel.deleteMany();
       console.log(`Se eliminaron ${result.deletedCount} documentos.`);
@@ -28,7 +28,7 @@ export class Product {
     }
   }
 
-  static async insertMany(products) {
+  async insertMany(products) {
     try {
       const result = await ProductModel.insertMany(products);
       console.log(`Se insertaron ${result.length} documentos.`);
@@ -39,9 +39,9 @@ export class Product {
     }
   }
   // not required
-  static async update() {}
-  static async delete() {}
-  static async getById(id) {
+  async update() {}
+  async delete() {}
+  async getById(id) {
     const product = ProductModel.find({ _id: id });
     return product;
   }
