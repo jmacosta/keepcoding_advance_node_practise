@@ -4,18 +4,7 @@
   <a
     class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full"
-      viewBox="0 0 24 24"
-    >
-      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-    </svg>
+    <%- include('logo.ejs')%>
     <span class="ml-3 text-xl">Nodepop</span>
   </a>
   <nav
@@ -25,7 +14,11 @@
     <a class="mr-5 hover:text-gray-900">Crear anuncio</a>
   </nav>
   <nav class="flex flex-wrap items-end text-base justify-end">
-    <a class="mr-5 hover:text-gray-900">ES</a>
-    <a class="mr-5 hover:text-gray-900">EN</a>
+    <a class="mr-5 hover:text-gray-900 w-10 h-10" href="#">
+      <%- include ('flagEs.ejs')%></a
+    >
+    <a class="mr-5 hover:text-gray-900 w-10 h-10" href="#"
+      ><%- include ('flagEng.ejs')%></a
+    >
   </nav>
 </div>
