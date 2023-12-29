@@ -7,6 +7,7 @@ export class ProductsController {
     const limit = req.query.limit;
     const sort = req.query.sort;
     const skip = req.query.start;
+    const product = new Product();
 
     const filter = {};
     if (filterByName) {
@@ -20,7 +21,7 @@ export class ProductsController {
     }
     res.locals.title = 'Nodepop';
 
-    const products = await Product.getAll({ filter, sort, limit, skip });
+    const products = await product.getAll({ filter, sort, limit, skip });
     res.locals.products = products;
     //res.json(products);
     res.render('index');
@@ -30,7 +31,7 @@ export class ProductsController {
     const productData = req.body;
 
     try {
-      const newProduct = await Product.create(productData);
+      const newProduct = await product.create(productData);
       return res.status(201).json(newProduct);
     } catch (error) {
       return res.status(400).json({ error: JSON.parse(error) });
