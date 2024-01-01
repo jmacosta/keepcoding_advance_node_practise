@@ -17,11 +17,13 @@
     "extends": "semistandard"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.9",
     "express": "4.18.2",
     "mongodb": "^6.1.0",
     "mongoose": "^7.5.4",
     "mongoose-uuid": "0.0.2",
+    "morgan": "^1.10.0",
     "semistandard": "^17.0.0",
     "zod": "3.22.4"
   },
