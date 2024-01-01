@@ -1,5 +1,6 @@
 import cookieParser from 'cookie-parser';
 import express, { json } from 'express';
+import session from 'express-session';
 import logger from 'morgan';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -23,6 +24,17 @@ app.get('/', (req, res) => {
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+  session({
+    name: 'nodeapp-session',
+    secret: 'ñvhskñfhewrrwsrwrwerwerñfbsdfg',
+    saveUninitialized: true,
+    resave: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 2 //2d session expired for inactivity
+    }
+  })
+);
 app.use('/products', productsRouter);
 app.use('/api/', productsApiRouter);
 app.use('/login', loginRouter);
