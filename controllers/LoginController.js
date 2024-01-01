@@ -3,6 +3,7 @@ export class LoginController {
   index(req, res, next) {
     res.locals.title = 'Nodepop';
     res.locals.error = '';
+    res.local.email = '';
     res.render('login');
   }
   async post(req, res, next) {
@@ -15,6 +16,7 @@ export class LoginController {
         //res.locals.error = req.__('Invalid credentials');
         res.locals.title = 'Nodepop';
         res.locals.error = 'Invalid credentials';
+        res.locals.email = email;
 
         res.render('login');
         return;
