@@ -20,7 +20,7 @@ async function main() {
     process.exit();
   }
   await initProducts();
-  await initUsers();
+  await initUsers(usersData);
   await disconnectDB();
 }
 main().catch(err => console.log('Hubo un error', err));
@@ -31,11 +31,24 @@ async function initProducts() {
   // create elements at DB
   await product.insertMany(productsData.products);
 }
+async function changePassword(element) {
+  element.password = await user.hashPassword(element.password);
+  return element;
+}
+async function usersChangePassword(users) {
+  let result = [];
+  for (let i = 0; i < users.length; i++) {
+    result.push(await changePassword(users[i]));
+  }
+  return result;
+}
+
 async function initUsers() {
   // delete users at DB
-  await user.deleteMany();
+  await user.deleteMany(usersData);
   // create users at DB
-  await user.insertMany(usersData.users);
+  const usersModifieds = await usersChangePassword(usersData.users);
+  await user.insertMany(usersModifieds);
 }
 function ask(text) {
   return new Promise((resolve, reject) => {
