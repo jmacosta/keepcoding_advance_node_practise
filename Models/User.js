@@ -28,4 +28,12 @@ export class User {
       throw error;
     }
   }
+  async findUser(userId) {
+    try {
+      const result = await UserModel.findOne(userId);
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
