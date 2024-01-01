@@ -24,9 +24,7 @@ export class ProductsController {
     const products = await product.getAll({ filter, sort, limit, skip });
     res.locals.products = products;
     //res.json(products);
-    if (!req.session.userLogged) {
-      res.redirect('/login');
-    }
+
     res.render('index');
   }
 
