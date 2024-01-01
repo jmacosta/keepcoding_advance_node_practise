@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import UserModel from '../Schemas/usersSchema.js';
 export class User {
   // TODO: bd methods
@@ -35,5 +36,8 @@ export class User {
     } catch (error) {
       throw error;
     }
+  }
+  async hashPassword(clearedPassword) {
+    return await bcrypt.hash(clearedPassword, 7);
   }
 }
