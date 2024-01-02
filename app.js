@@ -35,6 +35,10 @@ app.use(
     }
   })
 );
+app.use((req, res, next) => {
+  res.locals.title = 'Nodepop';
+  next();
+});
 app.use('/products', productsRouter);
 app.use('/api/', productsApiRouter);
 app.use('/login', loginRouter);

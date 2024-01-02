@@ -19,7 +19,7 @@ export class ProductApiController {
     if (filterBySellOrSearch) {
       filter.sellOrSearch = filterBySellOrSearch;
     }
-    res.locals.title = 'Nodepop';
+
     try {
       const products = await product.getAll({ filter, sort, limit, skip });
       res.locals.products = products;

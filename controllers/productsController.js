@@ -19,7 +19,6 @@ export class ProductsController {
     if (filterBySellOrSearch) {
       filter.sellOrSearch = filterBySellOrSearch;
     }
-    res.locals.title = 'Nodepop';
 
     const products = await product.getAll({ filter, sort, limit, skip });
     res.locals.products = products;
