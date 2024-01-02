@@ -40,4 +40,7 @@ export class User {
   async hashPassword(clearedPassword) {
     return await bcrypt.hash(clearedPassword, 7);
   }
+  async comparePasswords(clearedPassword, hashPassword) {
+    return await bcrypt.compare(clearedPassword, hashPassword);
+  }
 }

@@ -11,7 +11,7 @@ export class LoginController {
       const userDB = new User();
       const { email, password } = req.body;
       const user = await userDB.findUser({ email });
-      if (!user || user.password !== password) {
+      if (!user || !(await userDB.comparePasswords(password, user.password))) {
         //TODO: refactor to use i18n
         //res.locals.error = req.__('Invalid credentials');
         res.locals.title = 'Nodepop';
