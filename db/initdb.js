@@ -35,11 +35,15 @@ async function changePassword(element) {
   element.password = await user.hashPassword(element.password);
   return element;
 }
+
 async function usersChangePassword(users) {
   let result = [];
-  for (let i = 0; i < users.length; i++) {
-    result.push(await changePassword(users[i]));
-  }
+  await Promise.all(
+    users.map(async user => {
+      result.push(await changePassword(user));
+    })
+  );
+
   return result;
 }
 
