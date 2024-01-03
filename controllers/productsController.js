@@ -27,7 +27,8 @@ export class ProductsController {
     res.render('index');
   }
 
-  async create(req, res) {
+  async create(req, res, next) {
+    const product = new Product();
     const productData = req.body;
 
     try {
@@ -36,5 +37,8 @@ export class ProductsController {
     } catch (error) {
       return res.status(400).json({ error: JSON.parse(error) });
     }
+  }
+  new(req, res, next) {
+    res.render('product-new');
   }
 }
