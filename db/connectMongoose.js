@@ -9,7 +9,7 @@ export const connectDB = async () => {
     console.log('Conectado a MongoDB en', mongoose.connection.name);
   });
   try {
-    await mongoose.connect('mongodb://127.0.0.1/cursonode');
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('Conexión a la base de datos establecida.');
   } catch (error) {
     console.error('Error de conexión a la base de datos:', error.message);
