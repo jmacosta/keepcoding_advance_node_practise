@@ -7,7 +7,9 @@ import logger from 'morgan';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { connectDB } from './db/connectMongoose.js';
+import i18n from './lib/i18nConfigure.js';
 import { productsApiRouter } from './routes/api/products_api.js';
+import { changeLocaleRouter } from './routes/change-locale.js';
 import { loginRouter } from './routes/login.js';
 import { productsRouter } from './routes/products.js';
 dotenv.config();
@@ -27,6 +29,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
+app.use(i18n.init);
 app.use(
   session({
     name: 'nodeapp-session',
@@ -48,6 +51,7 @@ app.use((req, res, next) => {
 app.use('/', productsRouter);
 app.use('/api/', productsApiRouter);
 app.use('/login', loginRouter);
+app.use('/change-locale', changeLocaleRouter);
 
 app.use((req, res, next) => {
   res.status(404).json({ error: 'path not found' });
