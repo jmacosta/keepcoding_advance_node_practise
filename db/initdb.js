@@ -1,8 +1,10 @@
+import dotenv from 'dotenv';
 import { createInterface } from 'node:readline';
 import { Product } from '../Models/Product.js';
 import { User } from '../Models/User.js';
 import { readJson } from '../utils.js';
 import { connectDB, disconnectDB } from './connectMongoose.js';
+dotenv.config();
 const product = new Product();
 const user = new User();
 
