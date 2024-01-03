@@ -6,4 +6,9 @@ const productsController = new ProductsController();
 const loginController = new LoginController();
 export const productsRouter = Router();
 productsRouter.get('/', sessionAuthMiddleware, productsController.getAll);
+productsRouter.get(
+  '/new-product',
+  sessionAuthMiddleware,
+  productsController.new
+);
 productsRouter.get('/logout', loginController.logout);
