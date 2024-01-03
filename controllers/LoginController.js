@@ -20,9 +20,18 @@ export class LoginController {
         return;
       }
       req.session.userLogged = user._id;
-      res.redirect('/products');
+      res.redirect('/');
     } catch (error) {
       next(error);
     }
+  }
+  logout(req, res, next) {
+    req.session.regenerate(err => {
+      if (err) {
+        next(err);
+        return;
+      }
+      res.redirect('/');
+    });
   }
 }
