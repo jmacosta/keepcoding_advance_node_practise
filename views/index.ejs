@@ -28,7 +28,7 @@
                   <h2
                     class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
                   >
-                    Precio <%= product.price %> €
+                     <%=__('Price ') %><%= product.price %> €
                   </h2>
                   <h1
                     class="title-font text-lg font-medium text-gray-900 mb-3 truncate"
@@ -43,9 +43,9 @@
                     <a
                       class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0"
                       ><% if (product.sellOrSearch){ %>
-                      <h3 class="sell">SE VENDE</h3>
+                      <h3 class="sell"><%=__('FOR SALE ') %></h3>
                       <% }else{%>
-                      <h3 class="search">SE BUSCA</h3>
+                      <h3 class="search"><%=__('SEARCH ') %></h3>
                       <% } %>
                       <svg
                         class="w-4 h-4 ml-2"
