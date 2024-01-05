@@ -7,6 +7,7 @@ const productSchema = mongoose.Schema(
     //id: { type: String, unique: true, default: uuidv4 },
     name: { type: String, index: true },
     sellOrSearch: { type: Boolean, index: true },
+    description: { type: String, index: true },
     price: { type: Number, index: true },
     image: { type: String },
     tags: { type: [String], index: true },
