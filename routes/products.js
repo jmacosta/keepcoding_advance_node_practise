@@ -14,7 +14,7 @@ productsRouter.get(
 productsRouter.post(
   '/new-product',
   sessionAuthMiddleware,
-  productsController.post
+  productsController.create
 );
 
 productsRouter.get('/logout', loginController.logout);

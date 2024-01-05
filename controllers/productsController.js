@@ -38,6 +38,7 @@ export class ProductsController {
       return res.status(400).json({ error: JSON.parse(error) });
     }
   }
+
   new(req, res, next) {
     res.render('product-new');
   }
