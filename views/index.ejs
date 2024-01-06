@@ -20,9 +20,10 @@
                 class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
               >
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  class="lg:h-48 md:h-36 w-full object-contain object-center"
                   src="/assets/<%= product.image %>"
                   alt="<%= product.image %>"
+                  onerror="this.src='assets/no-image.jpg'"
                 />
                 <div class="p-6">
                   <h2
