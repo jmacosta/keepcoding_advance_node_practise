@@ -7,7 +7,7 @@ export const productsApiRouter = Router();
 productsApiRouter.get('/', productApiController.getAll);
 productsApiRouter.post('/', productApiController.create);
 productsApiRouter.get('/tags', productApiController.getTags);
-productsApiRouter.post('/authenticate', loginController.post);
+productsApiRouter.post('/authenticate', loginController.postJWT);
 
 // not required
 
