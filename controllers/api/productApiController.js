@@ -26,6 +26,7 @@ export class ProductApiController {
       res.json(products);
     } catch (error) {
       return res.status(400).json({ error: JSON.parse(error) });
+      next(error);
     }
   }
 
