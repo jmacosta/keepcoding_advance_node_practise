@@ -29,11 +29,21 @@ export class ProductsController {
 
   async create(req, res, next) {
     const product = new Product();
-    const productData = req.body;
+    const { name, sellOrSearch, description, price, image, tags } = req.body;
+    const owner = req.session.userLogged;
+    const productData = {
+      name,
+      sellOrSearch,
+      description,
+      price,
+      image,
+      tags,
+      owner
+    };
 
     try {
       const newProduct = await product.create(productData);
-      return res.status(201).json(newProduct);
+      return res.redirect('/');
     } catch (error) {
       return res.status(400).json({ error: JSON.parse(error) });
     }
