@@ -7,7 +7,9 @@ import logger from 'morgan';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { connectDB } from './db/connectMongoose.js';
+import errorMiddleware from './lib/errorMiddleware.js';
 import i18n from './lib/i18nConfigure.js';
+import jwtAuthMiddleware from './lib/jwtAuthMiddleware.js';
 import { productsApiRouter } from './routes/api/products_api.js';
 import { changeLocaleRouter } from './routes/change-locale.js';
 import { loginRouter } from './routes/login.js';
@@ -49,9 +51,10 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/', productsRouter);
-app.use('/api/', productsApiRouter);
+app.use('/api/', jwtAuthMiddleware, productsApiRouter);
 app.use('/login', loginRouter);
 app.use('/change-locale', changeLocaleRouter);
+app.use(errorMiddleware);
 
 app.use((req, res, next) => {
   res.status(404).json({ error: 'path not found' });
