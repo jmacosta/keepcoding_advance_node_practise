@@ -2,6 +2,7 @@
   "products": [
     {
       "name": "Funda de Teléfono Estilo Moderno",
+      "description": "Funda de teléfono con un diseño moderno y elegante.",
       "sellOrSearch": true,
       "price": 25.99,
       "image": "fundatelefono.jpg",
@@ -9,6 +10,7 @@
     },
     {
       "name": "Motor de Automóvil de Alto Rendimiento",
+      "description": "Motor potente diseñado para un rendimiento óptimo.",
       "sellOrSearch": true,
       "price": 4999.99,
       "image": "motoralto.jpg",
@@ -16,6 +18,7 @@
     },
     {
       "name": "Teléfono Inteligente Avanzado",
+      "description": "Teléfono inteligente con funciones avanzadas y tecnología de última generación.",
       "sellOrSearch": true,
       "price": 699.99,
       "image": "telefonoavanzado.jpg",
@@ -23,6 +26,7 @@
     },
     {
       "name": "Casco de Motocicleta de Carrera",
+      "description": "Casco diseñado para la máxima seguridad y estilo en carreras de motocicletas.",
       "sellOrSearch": true,
       "price": 129.99,
       "image": "cascocarrera.jpg",
@@ -30,6 +34,7 @@
     },
     {
       "name": "Portátil para Trabajo y Productividad",
+      "description": "Portátil potente y eficiente para trabajos y tareas productivas.",
       "sellOrSearch": true,
       "price": 899.99,
       "image": "portatilproductividad.jpg",
@@ -37,6 +42,7 @@
     },
     {
       "name": "Cámara de Fotos Compacta",
+      "description": "Cámara compacta ideal para capturar momentos en cualquier lugar.",
       "sellOrSearch": true,
       "price": 179.99,
       "image": "camaracompacta.jpg",
@@ -44,6 +50,7 @@
     },
     {
       "name": "Herramientas de Jardín de Alta Calidad",
+      "description": "Conjunto de herramientas de jardinería duraderas y de alto rendimiento.",
       "sellOrSearch": true,
       "price": 349.99,
       "image": "herramientasjardin.jpg",
@@ -51,6 +58,7 @@
     },
     {
       "name": "Mochila para Viajes de Aventura",
+      "description": "Mochila resistente y espaciosa perfecta para aventuras al aire libre.",
       "sellOrSearch": false,
       "price": 69.99,
       "image": "mochilaaventura.jpg",
@@ -58,6 +66,7 @@
     },
     {
       "name": "Scooter Eléctrico Plegable",
+      "description": "Scooter eléctrico plegable para desplazamientos urbanos rápidos y cómodos.",
       "sellOrSearch": true,
       "price": 399.99,
       "image": "scooterplegable.jpg",
@@ -65,6 +74,7 @@
     },
     {
       "name": "Laptop para Diseño Gráfico",
+      "description": "Laptop diseñada específicamente para aplicaciones de diseño gráfico intensivas.",
       "sellOrSearch": false,
       "price": 1299.99,
       "image": "laptopdisenio.jpg",
@@ -72,6 +82,7 @@
     },
     {
       "name": "Reloj Deportivo Multifuncional",
+      "description": "Reloj deportivo con múltiples funciones para un seguimiento preciso de la actividad física.",
       "sellOrSearch": true,
       "price": 79.99,
       "image": "relojdeportivo.jpg",
@@ -79,6 +90,7 @@
     },
     {
       "name": "Herramientas de Carpintería Profesional",
+      "description": "Conjunto de herramientas de carpintería de alta calidad para profesionales.",
       "sellOrSearch": true,
       "price": 499.99,
       "image": "herramientascarpinteria.jpg",
@@ -86,6 +98,7 @@
     },
     {
       "name": "Tableta Digitalizadora para Artistas",
+      "description": "Tableta digitalizadora diseñada para artistas y creadores visuales.",
       "sellOrSearch": false,
       "price": 249.99,
       "image": "tabletaartista.jpg",
@@ -93,6 +106,7 @@
     },
     {
       "name": "Zapatillas Deportivas de Última Generación",
+      "description": "Zapatillas deportivas de última generación para un rendimiento óptimo.",
       "sellOrSearch": true,
       "price": 129.99,
       "image": "zapatillasdeportivas.jpg",
@@ -100,6 +114,7 @@
     },
     {
       "name": "Bicicleta de Montaña Todo Terreno",
+      "description": "Bicicleta de montaña diseñada para terrenos variados y aventuras al aire libre.",
       "sellOrSearch": true,
       "price": 499.99,
       "image": "bicicletamontana.jpg",
@@ -107,6 +122,7 @@
     },
     {
       "name": "Teclado Mecánico para Gamers",
+      "description": "Teclado mecánico diseñado para satisfacer las demandas de los jugadores.",
       "sellOrSearch": true,
       "price": 89.99,
       "image": "tecladogamer.jpg",
@@ -114,6 +130,7 @@
     },
     {
       "name": "Impresora 3D de Alta Precisión",
+      "description": "Impresora 3D capaz de lograr resultados de alta precisión en sus impresiones.",
       "sellOrSearch": true,
       "price": 499.99,
       "image": "impresora3d.jpg",
@@ -121,6 +138,7 @@
     },
     {
       "name": "Cafetera de Espresso Automática",
+      "description": "Cafetera automática para preparar deliciosos espressos con facilidad.",
       "sellOrSearch": true,
       "price": 299.99,
       "image": "cafeteraespresso.jpg",
@@ -128,6 +146,7 @@
     },
     {
       "name": "Gafas de Realidad Virtual",
+      "description": "Gafas de realidad virtual para una experiencia inmersiva en tus contenidos.",
       "sellOrSearch": true,
       "price": 159.99,
       "image": "gafasvr.jpg",
@@ -135,6 +154,7 @@
     },
     {
       "name": "Herramientas de Electricista Profesional",
+      "description": "Conjunto de herramientas diseñadas para profesionales del sector eléctrico.",
       "sellOrSearch": true,
       "price": 399.99,
       "image": "herramientaselectricista.jpg",
@@ -142,6 +162,7 @@
     },
     {
       "name": "Altavoces Bluetooth Portátiles",
+      "description": "Altavoces portátiles con tecnología Bluetooth para disfrutar de tu música en cualquier lugar.",
       "sellOrSearch": false,
       "price": 49.99,
       "image": "altavocesbluetooth.jpg",
@@ -149,6 +170,7 @@
     },
     {
       "name": "Mesa de Escritorio Ergonómica",
+      "description": "Mesa de escritorio diseñada ergonómicamente para un entorno de trabajo cómodo.",
       "sellOrSearch": false,
       "price": 129.99,
       "image": "mesaescritorio.jpg",
@@ -156,6 +178,7 @@
     },
     {
       "name": "Máquina de Coser para Proyectos Creativos",
+      "description": "Máquina de coser ideal para proyectos creativos y de costura.",
       "sellOrSearch": true,
       "price": 199.99,
       "image": "maquinacoser.jpg",
@@ -163,6 +186,7 @@
     },
     {
       "name": "Silla de Oficina Ergonómica",
+      "description": "Silla de oficina ergonómica para proporcionar comodidad y apoyo durante largas horas de trabajo.",
       "sellOrSearch": true,
       "price": 149.99,
       "image": "sillaoficina.jpg",
@@ -170,6 +194,7 @@
     },
     {
       "name": "Cámara de Seguridad para Hogar",
+      "description": "Cámara de seguridad diseñada para proteger tu hogar y mantenerlo seguro.",
       "sellOrSearch": true,
       "price": 79.99,
       "image": "camaraseguridad.jpg",
@@ -177,6 +202,7 @@
     },
     {
       "name": "Disco Duro Externo de Gran Capacidad",
+      "description": "Disco duro externo con gran capacidad de almacenamiento para tus necesidades digitales.",
       "sellOrSearch": true,
       "price": 89.99,
       "image": "discoduroexterno.jpg",
@@ -184,6 +210,7 @@
     },
     {
       "name": "Maletín para Portátil de Estilo Profesional",
+      "description": "Maletín diseñado para transportar tu portátil con estilo y profesionalismo.",
       "sellOrSearch": true,
       "price": 39.99,
       "image": "maletinportatil.jpg",
@@ -191,6 +218,7 @@
     },
     {
       "name": "Auriculares Inalámbricos de Alta Calidad",
+      "description": "Auriculares inalámbricos de alta calidad para una experiencia auditiva excepcional.",
       "sellOrSearch": true,
       "price": 79.99,
       "image": "auricularesinalambricos.jpg",
@@ -198,6 +226,7 @@
     },
     {
       "name": "Sartén Antiadherente de Chef",
+      "description": "Sartén antiadherente diseñada para chefs y amantes de la cocina.",
       "sellOrSearch": true,
       "price": 29.99,
       "image": "sartenantiadherente.jpg",
@@ -205,6 +234,7 @@
     },
     {
       "name": "Máquina de Ejercicio para Casa",
+      "description": "Máquina de ejercicio para entrenar cómodamente en tu hogar.",
       "sellOrSearch": true,
       "price": 179.99,
       "image": "maquinaejercicio.jpg",
@@ -212,6 +242,7 @@
     },
     {
       "name": "Kit de Reparación de Bicicletas",
+      "description": "Kit de reparación esencial para mantener tu bicicleta en óptimas condiciones.",
       "sellOrSearch": true,
       "price": 39.99,
       "image": "kitbicicleta.jpg",
@@ -219,6 +250,7 @@
     },
     {
       "name": "Micrófono USB para Grabaciones",
+      "description": "Micrófono USB para grabaciones de alta calidad y sin complicaciones.",
       "sellOrSearch": true,
       "price": 49.99,
       "image": "microfonousb.jpg",
@@ -226,6 +258,7 @@
     },
     {
       "name": "Máquina para Hacer Pan Casero",
+      "description": "Máquina para hacer pan casero fácilmente en la comodidad de tu hogar.",
       "sellOrSearch": true,
       "price": 79.99,
       "image": "pancasero.jpg",
@@ -233,6 +266,7 @@
     },
     {
       "name": "Afeitadora Eléctrica de Precisión",
+      "description": "Afeitadora eléctrica de precisión para un afeitado suave y preciso.",
       "sellOrSearch": false,
       "price": 59.99,
       "image": "afeitadora.jpg",
@@ -240,6 +274,7 @@
     },
     {
       "name": "Robot Aspirador Inteligente",
+      "description": "Robot aspirador inteligente para mantener tu hogar limpio con facilidad.",
       "sellOrSearch": false,
       "price": 199.99,
       "image": "robotaspirador.jpg",
@@ -247,6 +282,7 @@
     },
     {
       "name": "Monitor de Juegos de Alta Frecuencia",
+      "description": "Monitor de juegos con alta frecuencia de actualización para una experiencia de juego suave.",
       "sellOrSearch": true,
       "price": 399.99,
       "image": "monitorjuegos.jpg",
@@ -254,247 +290,10 @@
     },
     {
       "name": "Set de Herramientas para Barbacoa",
+      "description": "Set completo de herramientas para una exitosa sesión de barbacoa al aire libre.",
       "sellOrSearch": true,
       "price": 29.99,
       "image": "herramientasbarbacoa.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Cargador Inalámbrico Rápido",
-      "sellOrSearch": true,
-      "price": 19.99,
-      "image": "cargadorinalambrico.jpg",
-      "tags": ["mobile"]
-    },
-    {
-      "name": "Estuche de Viaje para Maquillaje",
-      "sellOrSearch": true,
-      "price": 29.99,
-      "image": "estuchemaquillaje.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Hornillo Portátil para Acampar",
-      "sellOrSearch": true,
-      "price": 19.99,
-      "image": "hornilloportatil.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Máquina de Hacer Helados Caseros",
-      "sellOrSearch": true,
-      "price": 39.99,
-      "image": "heladoscaseros.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Mesa de Ping Pong Plegable",
-      "sellOrSearch": true,
-      "price": 199.99,
-      "image": "mesapingpong.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Cámara de Acción para Deportes Extremos",
-      "sellOrSearch": true,
-      "price": 149.99,
-      "image": "camaraaccion.jpg",
-      "tags": ["lifestyle", "motor"]
-    },
-    {
-      "name": "Licuadora de Alta Potencia",
-      "sellOrSearch": true,
-      "price": 59.99,
-      "image": "licuadora.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Candado Inteligente con Huella Dactilar",
-      "sellOrSearch": true,
-      "price": 39.99,
-      "image": "candadointeligente.jpg",
-      "tags": ["lifestyle", "work"]
-    },
-    {
-      "name": "Herramientas de Fontanería Profesional",
-      "sellOrSearch": true,
-      "price": 499.99,
-      "image": "herramientasfontaneria.jpg",
-      "tags": ["work"]
-    },
-    {
-      "name": "Auriculares con Cancelación de Ruido",
-      "sellOrSearch": true,
-      "price": 149.99,
-      "image": "auricularescancelacionruido.jpg",
-      "tags": ["lifestyle", "work"]
-    },
-    {
-      "name": "Portabicicletas para Automóvil",
-      "sellOrSearch": true,
-      "price": 79.99,
-      "image": "portabicicletas.jpg",
-      "tags": ["motor", "lifestyle"]
-    },
-    {
-      "name": "Báscula Inteligente para Baño",
-      "sellOrSearch": true,
-      "price": 29.99,
-      "image": "basculainteligente.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Caja de Herramientas con Ruedas",
-      "sellOrSearch": false,
-      "price": 89.99,
-      "image": "cajaherramientas.jpg",
-      "tags": ["work"]
-    },
-    {
-      "name": "Aspiradora Robot con Programación",
-      "sellOrSearch": false,
-      "price": 249.99,
-      "image": "aspiradorarobot.jpg",
-      "tags": ["lifestyle", "work"]
-    },
-    {
-      "name": "Máquina para Hacer Panini",
-      "sellOrSearch": false,
-      "price": 34.99,
-      "image": "panini.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Bolso de Viaje de Cuero",
-      "sellOrSearch": false,
-      "price": 99.99,
-      "image": "bolsocuero.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Telescopio para Observación Astronómica",
-      "sellOrSearch": false,
-      "price": 129.99,
-      "image": "telescopioastronomico.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Cámara de Seguridad para Exteriores",
-      "sellOrSearch": false,
-      "price": 79.99,
-      "image": "camaraexterior.jpg",
-      "tags": ["lifestyle", "work"]
-    },
-    {
-      "name": "Laptop Gaming de Alta Potencia",
-      "sellOrSearch": false,
-      "price": 1499.99,
-      "image": "laptopgaming.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Botas de Montaña Resistentes al Agua",
-      "sellOrSearch": false,
-      "price": 89.99,
-      "image": "botasmontana.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Herramientas para Jardinería en Miniatura",
-      "sellOrSearch": false,
-      "price": 19.99,
-      "image": "herramientasjardineria.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Máquina para Hacer Pasta Casera",
-      "sellOrSearch": false,
-      "price": 49.99,
-      "image": "pastacasera.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Cámara Compacta de Alta Resolución",
-      "sellOrSearch": false,
-      "price": 349.99,
-      "image": "camaracompactaresolucion.jpg",
-      "tags": ["lifestyle", "mobile"]
-    },
-    {
-      "name": "Altavoz Inteligente con Asistente de Voz",
-      "sellOrSearch": false,
-      "price": 79.99,
-      "image": "altavozinteligente.jpg",
-      "tags": ["lifestyle", "mobile"]
-    },
-    {
-      "name": "Máquina de Espresso Automática",
-      "sellOrSearch": false,
-      "price": 299.99,
-      "image": "maquinaespresso.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Herramientas de Electricista Profesional",
-      "sellOrSearch": false,
-      "price": 499.99,
-      "image": "herramientaselectricista.jpg",
-      "tags": ["work"]
-    },
-    {
-      "name": "Auriculares Inalámbricos Deportivos",
-      "sellOrSearch": false,
-      "price": 49.99,
-      "image": "auricularesdeportivos.jpg",
-      "tags": ["lifestyle", "mobile"]
-    },
-    {
-      "name": "Lámpara LED de Escritorio con Brazo Ajustable",
-      "sellOrSearch": true,
-      "price": 29.99,
-      "image": "lamparaescritorio.jpg",
-      "tags": ["work"]
-    },
-    {
-      "name": "Silla de Camping Plegable y Portátil",
-      "sellOrSearch": true,
-      "price": 19.99,
-      "image": "sillacamping.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Parrilla de Carbón para Exteriores",
-      "sellOrSearch": true,
-      "price": 69.99,
-      "image": "parrillaexterior.jpg",
-      "tags": ["lifestyle"]
-    },
-    {
-      "name": "Batería Externa Portátil para Dispositivos",
-      "sellOrSearch": true,
-      "price": 29.99,
-      "image": "bateriaexterna.jpg",
-      "tags": ["mobile"]
-    },
-    {
-      "name": "Kit de Pintura al Óleo para Artistas",
-      "sellOrSearch": true,
-      "price": 39.99,
-      "image": "kitpinturaoil.jpg",
-      "tags": ["lifestyle", "work"]
-    },
-    {
-      "name": "Sistema de Altavoces para Home Cinema",
-      "sellOrSearch": true,
-      "price": 399.99,
-      "image": "altavoceshomecinema.jpg",
-      "tags": ["lifestyle", "work"]
-    },
-    {
-      "name": "Mochila de Viaje Resistente y Espaciosa",
-      "sellOrSearch": true,
-      "price": 59.99,
-      "image": "mochilaviaje.jpg",
       "tags": ["lifestyle"]
     }
   ]
