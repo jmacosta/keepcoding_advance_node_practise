@@ -29,7 +29,12 @@ export class ProductsController {
 
   async create(req, res, next) {
     const product = new Product();
-    const { name, sellOrSearch, description, price, image, tags } = req.body;
+    const { name, sellOrSearch, description, price, tags } = req.body;
+    let image = '';
+    if (req.file) {
+      image = req.file.filename;
+    }
+
     const owner = req.session.userLogged;
     const productData = {
       name,
@@ -40,9 +45,9 @@ export class ProductsController {
       tags,
       owner
     };
-
+    console.log(image);
     try {
-      const newProduct = await product.create(productData);
+      await product.create(productData);
       return res.redirect('/');
     } catch (error) {
       return res.status(400).json({ error: JSON.parse(error) });
