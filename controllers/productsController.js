@@ -2,7 +2,7 @@ import cote from 'cote';
 import { Product } from '../Models/Product.js';
 const { Requester } = cote;
 export class ProductsController {
-  async getAll(req, res) {
+  static async createQuery(req) {
     const filterByName = req.query.name;
     const filterByTag = req.query.tags;
     const filterBySellOrSearch = req.query.sellOrSearch;
@@ -20,12 +20,16 @@ export class ProductsController {
     if (filterBySellOrSearch) {
       filter.sellOrSearch = filterBySellOrSearch;
     }
-
     const products = await product.getAll({ filter, sort, limit, skip });
-    res.locals.products = products;
-    //res.json(products);
-
+    return products;
+  }
+  async getAll(req, res) {
+    res.locals.products = await ProductsController.createQuery(req);
     res.render('index');
+  }
+  async listView(req, res) {
+    res.locals.products = await ProductsController.createQuery(req);
+    res.render('listView');
   }
 
   async create(req, res, next) {
