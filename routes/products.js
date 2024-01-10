@@ -8,8 +8,8 @@ const loginController = new LoginController();
 const storage = multer.diskStorage({
   destination: './public/assets/',
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + '-' + uniqueSuffix + file.originalname);
+    const uniqueSuffix = Date.now() + '-' + file.originalname;
+    cb(null, uniqueSuffix);
   }
 });
 const upload = multer({ storage: storage }).single('image');
