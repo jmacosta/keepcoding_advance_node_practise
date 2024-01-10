@@ -16,6 +16,11 @@ const upload = multer({ storage: storage }).single('image');
 export const productsRouter = Router();
 productsRouter.get('/', sessionAuthMiddleware, productsController.getAll);
 productsRouter.get(
+  '/list-view',
+  sessionAuthMiddleware,
+  productsController.listView
+);
+productsRouter.get(
   '/new-product',
   sessionAuthMiddleware,
   productsController.new
