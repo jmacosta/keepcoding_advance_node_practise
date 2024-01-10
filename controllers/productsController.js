@@ -1,4 +1,6 @@
+import cote from 'cote';
 import { Product } from '../Models/Product.js';
+const { Requester } = cote;
 export class ProductsController {
   async getAll(req, res) {
     const filterByName = req.query.name;
@@ -8,7 +10,6 @@ export class ProductsController {
     const sort = req.query.sort;
     const skip = req.query.start;
     const product = new Product();
-
     const filter = {};
     if (filterByName) {
       filter.name = new RegExp('^' + req.query.name, 'i');
@@ -29,10 +30,20 @@ export class ProductsController {
 
   async create(req, res, next) {
     const product = new Product();
+    const requester = new Requester({ name: 'Image for Thumb' });
+
     const { name, sellOrSearch, description, price, tags } = req.body;
     let image = '';
     if (req.file) {
       image = req.file.filename;
+      const event = {
+        type: 'create-thumbnail',
+        origin: '.' + req.file.destination,
+        image: image
+      };
+      requester.send(event, result => {
+        console.log(Date.now(), 'Message from Service ', result);
+      });
     }
 
     const owner = req.session.userLogged;
@@ -45,7 +56,7 @@ export class ProductsController {
       tags,
       owner
     };
-    console.log(image);
+
     try {
       await product.create(productData);
       return res.redirect('/');
