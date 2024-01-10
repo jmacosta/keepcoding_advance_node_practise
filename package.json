@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development DEBUG=nodeapp:* nodemon ./bin/www",
     "initdb": "node db/initdb.js",
     "start": "node app.js",
-    "tailwind": "npx tailwindcss -i public/stylesheets/style.css -o public/stylesheets/output.css --watch"
+    "tailwind": "npx tailwindcss -i public/stylesheets/style.css -o public/stylesheets/output.css --watch",
+    "thumbnail": "node thumbnail.js"
   },
   "keywords": [],
   "author": "",
