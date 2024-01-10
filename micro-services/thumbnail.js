@@ -13,7 +13,7 @@ const resizeImage = async (image, origin) => {
   const originalImage = origin + image;
   sharp(originalImage)
     .resize({ height: 100 })
-    .toFile(`../public/thumbs/thumbnail-${image}`, (err, info) => {
+    .toFile(`./public/thumbs/thumbnail-${image}`, (err, info) => {
       if (err) {
         console.log('error processing image', err);
       } else {

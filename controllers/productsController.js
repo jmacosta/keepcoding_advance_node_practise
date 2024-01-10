@@ -42,7 +42,7 @@ export class ProductsController {
       image = req.file.filename;
       const event = {
         type: 'create-thumbnail',
-        origin: '.' + req.file.destination,
+        origin: req.file.destination,
         image: image
       };
       requester.send(event, result => {
