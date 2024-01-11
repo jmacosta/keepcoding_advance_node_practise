@@ -9,7 +9,8 @@
     "initdb": "node db/initdb.js",
     "start": "node app.js",
     "tailwind": "npx tailwindcss -i public/stylesheets/style.css -o public/stylesheets/output.css --watch",
-    "thumbnail": "node micro-services/thumbnail.js"
+    "thumbnail": "node micro-services/thumbnail.js",
+    "create-first-thumbs": "node tools/init-thumbs.js"
   },
   "keywords": [],
   "author": "",
