@@ -169,5 +169,7 @@ $RECYCLE.BIN/
 *.lnk
 # design assets
 design
+# thumbs assets
+public/thumbs
 
 # End of https://www.toptal.com/developers/gitignore/api/node,windows
