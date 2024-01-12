@@ -17,6 +17,12 @@ Load initial data:
 ```sh
 # this command deletes all the data in the database and create default data
 $ npm run initdb
+# this command start the microservice for create thumbnails
+npm run thumbnail
+# this command create the thumbs for the examples images of the default data, please verify that the service for thumnails is running before use this command
+$ npm run create-first-thumbs
+
+
 ```
 
 ## Start
@@ -25,12 +31,16 @@ In production:
 
 ```sh
 npm start
+# this command start the microservice for create thumbnails
+npm run thumbnail
 ```
 
 In development:
 
 ```sh
 npm run dev
+# this command start the microservice for create thumbnails
+npm run thumbnail
 ```
 
 ## Start a MongoDB Server in MacOS or Linux
