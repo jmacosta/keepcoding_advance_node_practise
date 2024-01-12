@@ -32,11 +32,8 @@ export class ProductApiController {
   }
 
   async create(req, res) {
-    console.log('llego al bueno ');
-    console.log(`El owner es `, req.userLoggedAPI);
-    console.log('recibo ', req.body);
     const { name, sellOrSearch, description, price, tags } = req.body;
-    const owner = req.session.userLogged;
+    const owner = req.userLoggedAPI;
     const product = new Product();
     const requester = new Requester({ name: 'Image for Thumb' });
     let image = '';
