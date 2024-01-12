@@ -19,9 +19,9 @@ export class User {
     }
   }
 
-  async insertMany(products) {
+  async insertMany(users) {
     try {
-      const result = await UserModel.insertMany(products);
+      const result = await UserModel.insertMany(users);
       console.log(`Se insertaron ${result.length} documentos.`);
       return result;
     } catch (error) {
