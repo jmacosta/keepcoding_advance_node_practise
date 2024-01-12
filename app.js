@@ -37,7 +37,7 @@ app.use(i18n.init);
 app.use(
   session({
     name: 'nodeapp-session',
-    secret: 'ñvhskñfhewrrwsrwrwerwerñfbsdfg',
+    secret: process.env.SESSION_SECRET,
     saveUninitialized: true,
     resave: false,
     cookie: {
