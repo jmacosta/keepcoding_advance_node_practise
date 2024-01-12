@@ -21,8 +21,8 @@ async function main() {
   if (!remove) {
     process.exit();
   }
-  await initProducts();
   await initUsers(usersData);
+  await initProducts();
   await disconnectDB();
 }
 main().catch(err => console.log('Hubo un error', err));
