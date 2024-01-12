@@ -1,4 +1,6 @@
+import cote from 'cote';
 import { Product } from '../../Models/Product.js';
+const { Requester } = cote;
 export class ProductApiController {
   async getAll(req, res) {
     const filterByName = req.query.name;
@@ -26,14 +28,38 @@ export class ProductApiController {
       res.json(products);
     } catch (error) {
       return res.status(400).json({ error: JSON.parse(error) });
-      next(error);
     }
   }
 
   async create(req, res) {
-    const productData = req.body;
+    console.log('llego al bueno ');
+    console.log(`El owner es `, req.userLoggedAPI);
+    console.log('recibo ', req.body);
+    const { name, sellOrSearch, description, price, tags } = req.body;
+    const owner = req.session.userLogged;
     const product = new Product();
-
+    const requester = new Requester({ name: 'Image for Thumb' });
+    let image = '';
+    if (req.file) {
+      image = req.file.filename;
+      const event = {
+        type: 'create-thumbnail',
+        origin: req.file.destination,
+        image: image
+      };
+      requester.send(event, result => {
+        console.log(Date.now(), 'Message from Service ', result);
+      });
+    }
+    const productData = {
+      name,
+      sellOrSearch,
+      description,
+      price,
+      image,
+      tags,
+      owner
+    };
     try {
       const newProduct = await product.create(productData);
       return res.status(201).json(newProduct);
