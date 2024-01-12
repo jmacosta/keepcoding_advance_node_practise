@@ -6,6 +6,7 @@ import session from 'express-session';
 import logger from 'morgan';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { LoginController } from './controllers/LoginController.js';
 import { connectDB } from './db/connectMongoose.js';
 import errorMiddleware from './lib/errorMiddleware.js';
 import i18n from './lib/i18nConfigure.js';
@@ -14,6 +15,7 @@ import { productsApiRouter } from './routes/api/products_api.js';
 import { changeLocaleRouter } from './routes/change-locale.js';
 import { loginRouter } from './routes/login.js';
 import { productsRouter } from './routes/products.js';
+const loginController = new LoginController();
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -51,6 +53,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/', productsRouter);
+app.post('/api/authenticate', loginController.postJWT);
 app.use('/api/', jwtAuthMiddleware, productsApiRouter);
 app.use('/login', loginRouter);
 app.use('/change-locale', changeLocaleRouter);
