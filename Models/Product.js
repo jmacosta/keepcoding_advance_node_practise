@@ -1,4 +1,5 @@
 import ProductModel from '../Schemas/productsSchema.js';
+import UserModel from '../Schemas/usersSchema.js';
 export class Product {
   // to do bd statics methods
   async getAll({ filter, skip, limit, sort }) {
@@ -27,10 +28,17 @@ export class Product {
       throw error;
     }
   }
+  static async addOwner(products, user) {
+    const userBD = await Product.getByEmail(user);
+    const owner = userBD._id.toHexString();
+    const productsWithOwner = products.map(product => ({ ...product, owner }));
+    return productsWithOwner;
+  }
 
-  async insertMany(products) {
+  async insertMany(products, user) {
+    const productsWithOwner = await Product.addOwner(products, user);
     try {
-      const result = await ProductModel.insertMany(products);
+      const result = await ProductModel.insertMany(productsWithOwner);
       console.log(`Se insertaron ${result.length} documentos.`);
       return result;
     } catch (error) {
@@ -44,5 +52,13 @@ export class Product {
   async getById(id) {
     const product = ProductModel.find({ _id: id });
     return product;
+  }
+  static async getByEmail(email) {
+    try {
+      const user = await UserModel.findOne({ email });
+      return user;
+    } catch (error) {
+      console.error('User not found ', error);
+    }
   }
 }

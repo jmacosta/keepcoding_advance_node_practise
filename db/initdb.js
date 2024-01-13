@@ -22,16 +22,16 @@ async function main() {
     process.exit();
   }
   await initUsers(usersData);
-  await initProducts();
+  await initProducts('jmab2k@gmail.com');
   await disconnectDB();
 }
 main().catch(err => console.log('Hubo un error', err));
 
-async function initProducts() {
+async function initProducts(user) {
   // delete documents at DB
   await product.deleteMany();
   // create elements at DB
-  await product.insertMany(productsData.products);
+  await product.insertMany(productsData.products, user);
 }
 async function changePassword(element) {
   element.password = await user.hashPassword(element.password);
