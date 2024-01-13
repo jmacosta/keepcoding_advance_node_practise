@@ -1,6 +1,8 @@
 import cote from 'cote';
+import dotenv from 'dotenv';
 import { Product } from '../Models/Product.js';
 const { Requester } = cote;
+dotenv.config();
 export class ProductsController {
   static async createQuery(req) {
     const filterByName = req.query.name;
@@ -25,6 +27,10 @@ export class ProductsController {
   }
   async getAll(req, res) {
     res.locals.products = await ProductsController.createQuery(req);
+    if (process.env.ASSETS_PATH.startsWith('public')) {
+      res.locals.imagePath = process.env.ASSETS_PATH.substring('public'.length);
+    }
+
     res.render('index');
   }
   async listView(req, res) {
