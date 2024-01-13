@@ -1,5 +1,7 @@
 import cote from 'cote';
+import dotenv from 'dotenv';
 import { Product } from '../../Models/Product.js';
+dotenv.config();
 const { Requester } = cote;
 export class ProductApiController {
   async getAll(req, res) {
@@ -23,9 +25,21 @@ export class ProductApiController {
     }
 
     try {
+      const thumbsPath = process.env.THUMBS_PATH;
+      const assetsPath = process.env.ASSETS_PATH;
       const products = await product.getAll({ filter, sort, limit, skip });
-      res.locals.products = products;
-      res.json(products);
+      const productsWithThumbs = products.map(product => ({
+        _id: product._id,
+        name: product.name,
+        sellOrSearch: product.sellOrSearch,
+        description: product.description,
+        price: product.price,
+        image: assetsPath + product.image,
+        tags: product.tags,
+        owner: product.owner,
+        thumb: thumbsPath + 'thumbnail-' + product.image
+      }));
+      res.json(productsWithThumbs);
     } catch (error) {
       return res.status(400).json({ error: JSON.parse(error) });
     }
