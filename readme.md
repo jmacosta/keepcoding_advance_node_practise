@@ -41,6 +41,8 @@ In development:
 npm run dev
 # this command start the microservice for create thumbnails
 npm run thumbnail
+# this command start tailwind preprocessor for apply changes in styles
+npm run tailwind
 ```
 
 ## Start a MongoDB Server in MacOS or Linux
@@ -53,29 +55,257 @@ From the folder of the server:
 
 ## API Endpoints
 
-### GET /products
+### GET /api/authenticate
 
+
+#### Description
+This endpoint allows authenticating a user using a email and password.
+
+#### URL
+
+http://localhost:3000/api/authenticate
+
+
+#### Request Parameters
+- `email` (string): User's email.
+- `password` (string): User's password.
+
+#### Request Example
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"email": "user@example.com", "password": "1234"}' 
+http://localhost:3000/api/authenticate
+```
+
+#### Successful Response
 ```json
 {
-"products": [
+  "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+}
+```
+
+
+### GET /api/
+
+_You need a JWT Token to use_
+
+#### Description
+This endpoint get a complete list of products un database
+
+#### URL
+
+http://localhost:3000/api/
+
+#### Successful Response
+```json
+{
+
+[
     {
-      "name": "Funda de Teléfono Estilo Moderno",
-      "sellOrSearch": true,
-      "price": 25.99,
-      "image": "fundatelefono.jpg",
-      "tags": ["lifestyle", "mobile"]
+        "_id": "65a2f1619f54dbbd427efa92",
+        "name": "Funda de Teléfono Estilo Moderno",
+        "sellOrSearch": true,
+        "description": "Funda de teléfono con un diseño moderno y elegante.",
+        "price": 25.99,
+        "image": "public/assets/fundatelefono.jpg",
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-fundatelefono.jpg"
     },
     ...
     {
-      "name": "Motor de Automóvil de Alto Rendimiento",
-      "sellOrSearch": true,
-      "price": 4999.99,
-      "image": "motoralto.jpg",
-      "tags": ["motor", "work"]
-    },]
-    }
+        "_id": "65a2f1619f54dbbd427efa93",
+        "name": "Motor de Automóvil de Alto Rendimiento",
+        "sellOrSearch": true,
+        "description": "Motor potente diseñado para un rendimiento óptimo.",
+        "price": 4999.99,
+        "image": "public/assets/motoralto.jpg",
+        "tags": [
+            "motor",
+            "work"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-motoralto.jpg"    
+    },
+]
+
+}
 ```
-### GET /products/tags
+
+## Example of filters
+
+http://localhost:3000/api/?name=s
+
+```json
+[
+    {
+        "_id": "65a2f1619f54dbbd427efaae",
+        "name": "Sartén Antiadherente de Chef",
+        "sellOrSearch": true,
+        "description": "Sartén antiadherente diseñada para chefs y amantes de la cocina.",
+        "price": 29.99,
+        "image": "public/assets/sartenantiadherente.jpg",
+        "tags": [
+            "lifestyle"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-sartenantiadherente.jpg"
+    },
+    {
+        "_id": "65a2f1619f54dbbd427efa9a",
+        "name": "Scooter Eléctrico Plegable",
+        "sellOrSearch": true,
+        "description": "Scooter eléctrico plegable para desplazamientos urbanos rápidos y cómodos.",
+        "price": 399.99,
+        "image": "public/assets/scooterplegable.jpg",
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-scooterplegable.jpg"
+    },
+    {
+        "_id": "65a2f1619f54dbbd427efab6",
+        "name": "Set de Herramientas para Barbacoa",
+        "sellOrSearch": true,
+        "description": "Set completo de herramientas para una exitosa sesión de barbacoa al aire libre.",
+        "price": 29.99,
+        "image": "public/assets/herramientasbarbacoa.jpg",
+        "tags": [
+            "lifestyle"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-herramientasbarbacoa.jpg"
+    },
+    {
+        "_id": "65a2f1619f54dbbd427efaa9",
+        "name": "Silla de Oficina Ergonómica",
+        "sellOrSearch": true,
+        "description": "Silla de oficina ergonómica para proporcionar comodidad y apoyo durante largas horas de trabajo.",
+        "price": 149.99,
+        "image": "public/assets/sillaoficina.jpg",
+        "tags": [
+            "work"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-sillaoficina.jpg"
+    }
+]
+
+```
+
+http://localhost:3000/api/?tags=motor
+```json
+
+[
+    {
+        "_id": "65a2f1619f54dbbd427efa93",
+        "name": "Motor de Automóvil de Alto Rendimiento",
+        "sellOrSearch": true,
+        "description": "Motor potente diseñado para un rendimiento óptimo.",
+        "price": 4999.99,
+        "image": "public/assets/motoralto.jpg",
+        "tags": [
+            "motor",
+            "work"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-motoralto.jpg"
+    },
+    {
+        "_id": "65a2f1619f54dbbd427efa95",
+        "name": "Casco de Motocicleta de Carrera",
+        "sellOrSearch": true,
+        "description": "Casco diseñado para la máxima seguridad y estilo en carreras de motocicletas.",
+        "price": 129.99,
+        "image": "public/assets/cascocarrera.jpg",
+        "tags": [
+            "motor"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-cascocarrera.jpg"
+    },
+    {
+        "_id": "65a2f1619f54dbbd427efab0",
+        "name": "Kit de Reparación de Bicicletas",
+        "sellOrSearch": true,
+        "description": "Kit de reparación esencial para mantener tu bicicleta en óptimas condiciones.",
+        "price": 39.99,
+        "image": "public/assets/kitbicicleta.jpg",
+        "tags": [
+            "motor",
+            "lifestyle"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-kitbicicleta.jpg"
+    }
+]
+
+```
+
+http://localhost:3000/api/?start=1&limit=3&sort=name&tag=lifestyle
+
+```json
+[
+    {
+        "_id": "65a2f1619f54dbbd427efaa6",
+        "name": "Altavoces Bluetooth Portátiles",
+        "sellOrSearch": false,
+        "description": "Altavoces portátiles con tecnología Bluetooth para disfrutar de tu música en cualquier lugar.",
+        "price": 49.99,
+        "image": "public/assets/altavocesbluetooth.jpg",
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-altavocesbluetooth.jpg"
+    },
+    {
+        "_id": "65a2f1619f54dbbd427efaad",
+        "name": "Auriculares Inalámbricos de Alta Calidad",
+        "sellOrSearch": true,
+        "description": "Auriculares inalámbricos de alta calidad para una experiencia auditiva excepcional.",
+        "price": 79.99,
+        "image": "public/assets/auricularesinalambricos.jpg",
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-auricularesinalambricos.jpg"
+    },
+    {
+        "_id": "65a2f1619f54dbbd427efaa0",
+        "name": "Bicicleta de Montaña Todo Terreno",
+        "sellOrSearch": true,
+        "description": "Bicicleta de montaña diseñada para terrenos variados y aventuras al aire libre.",
+        "price": 499.99,
+        "image": "public/assets/bicicletamontana.jpg",
+        "tags": [
+            "lifestyle"
+        ],
+        "owner": "65a2f1619f54dbbd427efa8e",
+        "thumb": "public/thumbs/thumbnail-bicicletamontana.jpg"
+    }
+]
+
+```
+
+### GET /api/tags
+_You need a JWT Token to use_
+
+#### Description
+This endpoint get a list of product's categories
+
+#### URL
+
+http://localhost:3000/api/tags
+
+#### Successful Response
 ```json
 {
 "tags": [
@@ -87,436 +317,71 @@ From the folder of the server:
 }
 ```
 ### POST /products/
+
+_You need a JWT Token to use_ 
+#### Description
+This endpoint allows submit a new ad with information and a image file 
+
+#### URL
+
+http://localhost:3000/api/
+
+
+#### Request Parameters
+- `name` (string): Product name.
+- `sellOrSearch` (bolean): `true` is for sale `false` is for search
+- `description` (string): :A little plastic figure of baby Yoda 
+- `price` (number): Price for the product
+- `tags` ([string]): Product's categories
+- `image`: An image file
+
+#### Request Example
+```bash
+curl --location 'http://localhost:3000/api' \
+--header 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWExYjZhM2VjYjUyYjAwNzM1Y2ZhNGMiLCJpYXQiOjE3MDUwOTcxMzYsImV4cCI6MTcwNTEwNDMzNn0.lDSULl0N2b8fvUK7scLkdcFV_oH1oajiw6yNd-J7dkk' \
+--form 'name="Baby Yoda Figure"' \
+--form 'sellOrSearch="true"' \
+--form 'description="A little plastic figure of baby Yoda "' \
+--form 'price="45"' \
+--form 'tags="work"' \
+--form 'image=@"/C:/Users/user/Desktop/yoda.jpg"'
+```
+
+#### Successful Response
 ```json
 {
-      "name": "funda nueva",
-      "sellOrSearch": false,
-      "price": 50.99,
-      "image": "fundatelefono.jpg",
-      "tags": ["lifestyle", "mobile"]
+    "name": "Baby Yoda Figure",
+    "sellOrSearch": true,
+    "description": "A little plastic figure of baby Yoda ",
+    "price": 45,
+    "image": "1705240851923-yoda.jpg",
+    "tags": [
+        "work"
+    ],
+    "owner": "65a2f1619f54dbbd427efa8e",
+    "_id": "65a3e913034cd10ea34dafc9",
+    "__v": 0
+}
+```
+#### Error Response 
+
+_Request without token_
+
+```json
+{
+    "error": {
+        "message": "no token provided",
+        "code": 401
     }
-```
-## Example of filters
-
-http://localhost:3000/products/?name=s
-
-```json
-[
-  {
-    "_id": "65230c42edaaa0cf928dc550",
-    "name": "Sartén Antiadherente de Chef",
-    "sellOrSearch": true,
-    "price": 29.99,
-    "image": "sartenantiadherente.jpg",
-    "tags": [
-      "lifestyle"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc53c",
-    "name": "Scooter Eléctrico Plegable",
-    "sellOrSearch": true,
-    "price": 399.99,
-    "image": "scooterplegable.jpg",
-    "tags": [
-      "lifestyle",
-      "mobile"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc558",
-    "name": "Set de Herramientas para Barbacoa",
-    "sellOrSearch": true,
-    "price": 29.99,
-    "image": "herramientasbarbacoa.jpg",
-    "tags": [
-      "lifestyle"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc575",
-    "name": "Silla de Camping Plegable y Portátil",
-    "sellOrSearch": true,
-    "price": 19.99,
-    "image": "sillacamping.jpg",
-    "tags": [
-      "lifestyle"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc54b",
-    "name": "Silla de Oficina Ergonómica",
-    "sellOrSearch": true,
-    "price": 149.99,
-    "image": "sillaoficina.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc579",
-    "name": "Sistema de Altavoces para Home Cinema",
-    "sellOrSearch": true,
-    "price": 399.99,
-    "image": "altavoceshomecinema.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  }
-]
-
+}
 ```
 
-http://localhost:3000/products/?tags=work
+_Request with expired token or not valid token_
 ```json
-
-[
-  {
-    "_id": "65230c42edaaa0cf928dc535",
-    "name": "Motor de Automóvil de Alto Rendimiento",
-    "sellOrSearch": true,
-    "price": 4999.99,
-    "image": "motoralto.jpg",
-    "tags": [
-      "motor",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc538",
-    "name": "Portátil para Trabajo y Productividad",
-    "sellOrSearch": true,
-    "price": 899.99,
-    "image": "portatilproductividad.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc53a",
-    "name": "Herramientas de Jardín de Alta Calidad",
-    "sellOrSearch": true,
-    "price": 349.99,
-    "image": "herramientasjardin.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc53d",
-    "name": "Laptop para Diseño Gráfico",
-    "sellOrSearch": false,
-    "price": 1299.99,
-    "image": "laptopdisenio.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc53f",
-    "name": "Herramientas de Carpintería Profesional",
-    "sellOrSearch": true,
-    "price": 499.99,
-    "image": "herramientascarpinteria.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc540",
-    "name": "Tableta Digitalizadora para Artistas",
-    "sellOrSearch": false,
-    "price": 249.99,
-    "image": "tabletaartista.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc544",
-    "name": "Impresora 3D de Alta Precisión",
-    "sellOrSearch": true,
-    "price": 499.99,
-    "image": "impresora3d.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc547",
-    "name": "Herramientas de Electricista Profesional",
-    "sellOrSearch": true,
-    "price": 399.99,
-    "image": "herramientaselectricista.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc549",
-    "name": "Mesa de Escritorio Ergonómica",
-    "sellOrSearch": false,
-    "price": 129.99,
-    "image": "mesaescritorio.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc54a",
-    "name": "Máquina de Coser para Proyectos Creativos",
-    "sellOrSearch": true,
-    "price": 199.99,
-    "image": "maquinacoser.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc54b",
-    "name": "Silla de Oficina Ergonómica",
-    "sellOrSearch": true,
-    "price": 149.99,
-    "image": "sillaoficina.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc54d",
-    "name": "Disco Duro Externo de Gran Capacidad",
-    "sellOrSearch": true,
-    "price": 89.99,
-    "image": "discoduroexterno.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc54e",
-    "name": "Maletín para Portátil de Estilo Profesional",
-    "sellOrSearch": true,
-    "price": 39.99,
-    "image": "maletinportatil.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc553",
-    "name": "Micrófono USB para Grabaciones",
-    "sellOrSearch": true,
-    "price": 49.99,
-    "image": "microfonousb.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc556",
-    "name": "Robot Aspirador Inteligente",
-    "sellOrSearch": false,
-    "price": 199.99,
-    "image": "robotaspirador.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc557",
-    "name": "Monitor de Juegos de Alta Frecuencia",
-    "sellOrSearch": true,
-    "price": 399.99,
-    "image": "monitorjuegos.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc560",
-    "name": "Candado Inteligente con Huella Dactilar",
-    "sellOrSearch": true,
-    "price": 39.99,
-    "image": "candadointeligente.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc561",
-    "name": "Herramientas de Fontanería Profesional",
-    "sellOrSearch": true,
-    "price": 499.99,
-    "image": "herramientasfontaneria.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc562",
-    "name": "Auriculares con Cancelación de Ruido",
-    "sellOrSearch": true,
-    "price": 149.99,
-    "image": "auricularescancelacionruido.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc565",
-    "name": "Caja de Herramientas con Ruedas",
-    "sellOrSearch": false,
-    "price": 89.99,
-    "image": "cajaherramientas.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc566",
-    "name": "Aspiradora Robot con Programación",
-    "sellOrSearch": false,
-    "price": 249.99,
-    "image": "aspiradorarobot.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc56a",
-    "name": "Cámara de Seguridad para Exteriores",
-    "sellOrSearch": false,
-    "price": 79.99,
-    "image": "camaraexterior.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc572",
-    "name": "Herramientas de Electricista Profesional",
-    "sellOrSearch": false,
-    "price": 499.99,
-    "image": "herramientaselectricista.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc574",
-    "name": "Lámpara LED de Escritorio con Brazo Ajustable",
-    "sellOrSearch": true,
-    "price": 29.99,
-    "image": "lamparaescritorio.jpg",
-    "tags": [
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc578",
-    "name": "Kit de Pintura al Óleo para Artistas",
-    "sellOrSearch": true,
-    "price": 39.99,
-    "image": "kitpinturaoil.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc579",
-    "name": "Sistema de Altavoces para Home Cinema",
-    "sellOrSearch": true,
-    "price": 399.99,
-    "image": "altavoceshomecinema.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  }
-]
-
-```
-
-http://localhost:3000/products/?start=1&limit=3&sort=name&tag=lifestyle
-
-```json
-[
-  {
-    "_id": "65230c42edaaa0cf928dc548",
-    "name": "Altavoces Bluetooth Portátiles",
-    "sellOrSearch": false,
-    "price": 49.99,
-    "image": "altavocesbluetooth.jpg",
-    "tags": [
-      "lifestyle",
-      "mobile"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc570",
-    "name": "Altavoz Inteligente con Asistente de Voz",
-    "sellOrSearch": false,
-    "price": 79.99,
-    "image": "altavozinteligente.jpg",
-    "tags": [
-      "lifestyle",
-      "mobile"
-    ],
-    "__v": 0
-  },
-  {
-    "_id": "65230c42edaaa0cf928dc566",
-    "name": "Aspiradora Robot con Programación",
-    "sellOrSearch": false,
-    "price": 249.99,
-    "image": "aspiradorarobot.jpg",
-    "tags": [
-      "lifestyle",
-      "work"
-    ],
-    "__v": 0
-  }
-]
-
+{
+    "error": {
+        "message": "Unauthorized",
+        "code": 401
+    }
+}
 ```
