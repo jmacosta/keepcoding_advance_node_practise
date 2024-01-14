@@ -82,7 +82,15 @@ http://localhost:3000/api/authenticate
   "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
 }
 ```
+#### Error Response 
 
+_Request with no data for credentials or data not valid_
+
+```json
+{
+    "error": "Invalid credentials"
+}
+```
 
 ### GET /api/
 
@@ -133,7 +141,28 @@ http://localhost:3000/api/
 
 }
 ```
+#### Error Response 
 
+_Request without token_
+
+```json
+{
+    "error": {
+        "message": "no token provided",
+        "code": 401
+    }
+}
+```
+
+_Request with expired token or not valid token_
+```json
+{
+    "error": {
+        "message": "Unauthorized",
+        "code": 401
+    }
+}
+``` 
 ## Example of filters
 
 http://localhost:3000/api/?name=s
@@ -316,6 +345,30 @@ http://localhost:3000/api/tags
 ]
 }
 ```
+
+#### Error Response 
+
+_Request without token_
+
+```json
+{
+    "error": {
+        "message": "no token provided",
+        "code": 401
+    }
+}
+```
+
+_Request with expired token or not valid token_
+```json
+{
+    "error": {
+        "message": "Unauthorized",
+        "code": 401
+    }
+}
+```
+
 ### POST /products/
 
 _You need a JWT Token to use_ 
